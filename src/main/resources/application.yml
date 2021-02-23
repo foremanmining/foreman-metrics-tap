@@ -1,0 +1,6 @@
+minerUsername: root
+minerPassword: root
+dumpFrequencyInMillis: 10000
+queryFrequencyInMillis: 1000
+fanCount: 4
+tempCount: 30

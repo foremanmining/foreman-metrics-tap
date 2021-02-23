@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>mn.foreman</groupId>
+    <artifactId>metrics-tap</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>metrics-tap</name>
+    <description>An application to tap metrics to a csv.</description>
+
+    <organization>
+        <name>OBM, LLC</name>
+        <url>https://foreman.mn</url>
+    </organization>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>2666cfb367e1-releases</name>
+            <url>https://artifactory.foreman.mn/artifactory/libs-release</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>2666cfb367e1-snapshots</name>
+            <url>https://artifactory.foreman.mn/artifactory/libs-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <java.version>1.8</java.version>
+
+        <foreman.version>3.46.1</foreman.version>
+        <lombok.version>1.18.16</lombok.version>
+        <opencsv.version>4.1</opencsv.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>mn.foreman</groupId>
+            <artifactId>foreman-antminer</artifactId>
+            <version>${foreman.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>${opencsv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
